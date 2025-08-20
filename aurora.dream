@@ -1,0 +1,24 @@
+aurora-dream {
+ width: 220px;
+ height: 150px;
+ border-radius: 12px;
+ background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 55%, #fad0c4 100%);
+ box-shadow: 0 0 20px rgba(255, 182, 193, 0.6), 0 0 40px rgba(173, 216, 230, 0.4);
+ animation: shimmer 6s ease-in-out infinite;
+ position: relative;
+ overflow: hidden;
+}
+@keyframes shimmer {
+  0% {
+    background-position: 0% 50%;
+    transform: rotate(0deg);
+}
+ 50% {
+   background-position: 100% 50%;
+   transform: rotate(1deg);
+}
+ 100% {
+   background-position: 0% 50%;
+   transform: rotate(0deg);
+  }
+}

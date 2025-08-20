@@ -1,0 +1,125 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+}
+.gallery{
+    display:flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    flex-wrap: wrap;
+}
+.art-piece {
+    border: 2px solid #ccc;
+    padding: 1rem;
+    width: 200px;
+}
+.canvas {
+    width: 100%;
+    height: 150px;
+    margin-top: 1rem;
+}
+/* Example art styles */
+.sunset {
+    background: linear-gradient(to top, #ff6e7f, #bfe9ff);
+}
+.robot {
+    background: repeating-linear-gradient(
+        45deg,
+        #444,
+        #444 10px,
+        #888 10px,
+        #888 20px
+ );
+}
+.motorcycle-burnout {
+    position: relative;
+    width: 220px;
+    height: 150px;
+    background: #1a1a1a;
+    border-radius: 12px;
+    overflow:hidden;
+}
+.motorcycle {
+    position: absolute;
+    bottom: 20px;
+    left: -60px;
+    width: 60px;
+    height: 30px;
+    background: #000;
+    border-radius: 10px;
+    animation: rideAcross 6s linear infinite;
+}
+.wheel {
+    position: absolute;
+    bottom: 10px;
+    width: 20px;
+    height: 20px;
+    background: #555;
+    border-radius: 50%;
+}
+.wheel.front {
+    left: 10px;
+}
+.wheel.back {
+    right: 10px;
+}
+.smoke {
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    animation: puff 1.5s ease-out infinite;
+}
+@keyframes rideAcross {
+    0% { left: -60px;}
+    50% { left: 100px; }
+    100% { left: 220px; }
+}
+@keyframes puff {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(3);
+        opacity: 0;
+    }
+}   
+.motorcycle::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 55px;
+    width:40px;
+    height: 10px;
+    background: radial-gradient(circle, #ffffcc 0%, transparent 70%);
+    opacity: 0.8;
+    transform: rotate(10deg);
+    animation: flicker 1s infinte alternate;
+   }
+   @keyframes flicker {
+       0% { opacity: 0.6; }
+       100% {opacity: 1; }
+   }
+.speedline {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #fff, transparent);
+    animation: dash 1s linear infinite;
+    opacity: 0.3;
+   }
